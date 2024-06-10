@@ -1,4 +1,3 @@
-import time
 from pages.registration_page import RegistrationFormPage
 
 

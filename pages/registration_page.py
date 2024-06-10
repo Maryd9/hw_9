@@ -1,8 +1,5 @@
-import os
-
-from selene import browser, have, command
-
 import resources.resource
+from selene import browser, have, command
 
 
 class RegistrationFormPage:
