@@ -1,5 +1,5 @@
-from data.users import user
-from pages.application import app
+from hw_9.data.users import user
+from hw_9.pages.application import app
 
 
 def test_simple_registration_form():

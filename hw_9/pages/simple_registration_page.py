@@ -1,5 +1,5 @@
-from selene import browser, have
-from data.users import User
+from selene import browser, have, command
+from hw_9.data.users import User
 
 
 class SimpleRegistrationPage:
@@ -9,10 +9,6 @@ class SimpleRegistrationPage:
         self.current_address_element = browser.element('#currentAddress')
         self.permanent_address_element = browser.element('#permanentAddress')
         self.submit_button_element = browser.element('#submit')
-        self.full_name_output = browser.element('#name')
-        self.email = browser.element('#email')
-        self.currentAddress = browser.element('#currentAddress')
-        self.permanentAddress = browser.element('#permanentAddress')
 
     def fill_full_name(self, value):
         self.full_name_element.type(value)
@@ -27,8 +23,7 @@ class SimpleRegistrationPage:
         self.permanent_address_element.type(value)
 
     def submit(self):
-        element = self.submit_button_element
-        browser.execute_script("arguments[0].scrollIntoView(true); arguments[0].click();", element())
+        self.submit_button_element.perform(command.js.scroll_into_view).click()
 
     def register(self, user: User):
         self.fill_full_name(user.full_name)
