@@ -13,7 +13,7 @@ def test_student_registration_form():
         .fill_user_number('1234456789')
         .fill_day_of_birth('1999', 'May', '11')
         .fill_subject('Maths')
-        .fill_hobbies()
+        .fill_hobbies('Sports')
         .fill_picture('picture.jpg')
         .fill_current_address('Quitzon Common, South Kraigville')
         .fill_state('NCR')

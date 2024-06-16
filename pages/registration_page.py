@@ -41,9 +41,9 @@ class RegistrationFormPage:
         browser.element('#subjectsInput').type(value).press_enter()
         return self
 
-    def fill_hobbies(self):
-        browser.element('[for=hobbies-checkbox-1]').perform(command.js.scroll_into_view)
-        browser.element('.custom-checkbox').click()
+    def fill_hobbies(self, value):
+        browser.all(".custom-control-label").element_by(have.exact_text(value)).perform(
+            command.js.scroll_into_view).click()
         return self
 
     def fill_picture(self, file_name):
@@ -55,8 +55,7 @@ class RegistrationFormPage:
         return self
 
     def fill_state(self, value):
-        browser.element('#state').perform(command.js.scroll_into_view)
-        browser.element('#state').click()
+        browser.element('#state').perform(command.js.scroll_into_view).click()
         browser.all('[id^=react-select][id*=option]').element_by(
             have.exact_text(value)
         ).click()
