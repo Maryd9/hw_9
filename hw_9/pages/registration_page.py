@@ -1,7 +1,7 @@
-import resources.resource
+import tests.resources.resource
 from selene import browser, have, command
 
-from hw_9.users import User
+from hw_9.data.users import User
 
 
 class RegistrationFormPage:
@@ -62,7 +62,7 @@ class RegistrationFormPage:
         return self
 
     def _fill_picture(self, file_name):
-        self.picture_element.set_value(resources.resource.path(file_name))
+        self.picture_element.set_value(tests.resources.resource.path(file_name))
         return self
 
     def _fill_current_address(self, value):

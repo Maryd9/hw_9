@@ -1,5 +1,5 @@
-from hw_9.users import User
-from pages.registration_page import RegistrationFormPage
+from hw_9.data.users import User
+from hw_9.pages import RegistrationFormPage
 
 
 def test_student_registration_form():
